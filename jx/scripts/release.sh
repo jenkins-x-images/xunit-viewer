@@ -13,6 +13,7 @@ docker push ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION
 echo
 echo "pushing new version to git tag"
 
+git tag $VERSION
 git push --tags
 
 echo
