@@ -9,3 +9,7 @@ echo "Creating docker image version: $VERSION"
 
 docker build -t ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION .
 docker push ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION
+
+echo "pushed docker image: ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION"
+echo "you can browse the versions here: https://hub.docker.com/r/jenkinsxio/xunit-viewer/"
+
