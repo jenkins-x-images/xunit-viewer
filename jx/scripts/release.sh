@@ -11,7 +11,7 @@ docker build -t ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION .
 docker push ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION
 
 echo
-echo "pushing new version to git tag"
+echo "pushing new version to git tag.."
 
 jx step tag --version $VERSION
 
