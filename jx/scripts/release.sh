@@ -2,8 +2,10 @@
 
 export DOCKER_REGISTRY=docker.io
 
-export VERSION="$(jx step next-version --use-git-tag-only)"
-echo "Creating docker image version $VERSION"
+jx step next-version --use-git-tag-only > VERSION
+
+export VERSION=$(cat VERSION)
+echo "Creating docker image version: $VERSION"
 
 docker build -t ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION .
 docker push ${DOCKER_REGISTRY}/jenkinsxio/xunit-viewer:$VERSION
